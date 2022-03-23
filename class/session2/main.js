@@ -193,20 +193,19 @@
 // Output:
 // tính tổng các số vừa chia hết cho 3 vừa chia hết cho 5 và hiển thị ra 
 // nếu số nhập vào là số âm thì hiển thị thông báo "Bạn phải nhập số dương"
-var number = prompt("nhap 1 so duong bat ki")
-var sum = 0
+// var number = prompt("nhap 1 so duong bat ki")
+// var sum = 0
 
-if(number < 0){
-    console.log("bạn nhap khong phai so duong ")
-}else{
-    for(var i = 1; i <= number; i++){
-        if(i % 3 == 0 && i % 5 ==0 ){
-            sum += i;
-            console.log(i)
-        }else{
-            sum = 0;
-        }
-    }
+// if(number < 0){
+//     console.log("bạn nhap khong phai so duong ")
+// }else{
+//     for(var i = 1; i <= number; i++){
+//         if(i % 3 == 0 && i % 5 ==0 ){
+//             sum += i;
+//         }else{
+//             sum = 0;
+//         }
+//     }
     
-    console.log(sum)
-}
+//     console.log(sum)
+// }

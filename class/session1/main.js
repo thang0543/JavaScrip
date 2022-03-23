@@ -1,3 +1,4 @@
+
 /*
    1: biến là đại lượng sinh ra để chứa dữ liệu 
    cú pháp khai báo biến: 
@@ -34,6 +35,9 @@
             for(var [biến chạy]; điều kiện; bước nhảy){
                 khối lệnh
             }
+            for(var tenbien of tenmang){
+                khối lệnh
+            }
         +while
             var [biến chạy]
             while(điều kiện){
@@ -46,12 +50,47 @@
 
             }while(điều kiện)
     5: function-hàm
-    6: mảng
+            -dong goi du lieu va tai su dung nhieu lan
+            c1: funcyion sum(){--cau lenh thuc thi--}
+            c2: var showMessage = function(){--cau lenh thuc thi--}
+            -ham khong co tham so va khong co gia tri tra ve
+            -ham khong co tham so và co gia tri gia ve 
+            -ham co tham so va khonmg co gia tri tra ve
+            -ham co tham so va  co gia tri tra ve
+    6: mảng-Array
+        1:var tenMang = new Array();
+        2:var tenmang = [];
     7: object
 
 
 */
-var height = 10;
-var userName = "Hello word"
-console.log(height);
-console.log(userName);
+// var height = 10;
+// var userName = "Hello word"
+// console.log(height);
+// console.log(userName);
+
+var products = ["iphone", "samsung"];
+//them du lieu vao cuoi mang
+products.push("oppo");
+//them du lieu vao dau mang
+products.unshift("oppo")
+// xoa du lieu cuoi mang
+products.pop()
+//xoa du lieu dau mang
+products.shift()
+// xoa vi tri bat ki 
+products.splice(1,1,"oppo","..")
+//              (vị trí bắt đầu, xóa số phần tử, thêm mới phần tư vào vi trí)
+
+console.log(products)
+
+function sum(){
+    var sum = 0
+    /// arguments tat ca tham so nhap vao 
+    for(var i = 0; i < arguments.length; i++){
+        sum += arguments[i];
+    }
+    return sum
+}
+
+console.log(sum(5,4,3,3))

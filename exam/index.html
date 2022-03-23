@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    
+   
+    <form action="/" method="get">
+        <h4>Đăng kí thành viên</h4>
+    <div  class="form-control">
+        <h3>Mã sinh viên: </h3>
+        <label><input type="text" name="" id="id"></label>
+        <small> error</small>
+    </div>
+ 
+    <div>
+        <h3>email: </h3>
+        <label><input type="email" name="" id="email" value=""></label>
+        <small> error</small>
+    </div>
+    <div>
+        <h3>gioi tinh: </h3>
+        <label><input type="radio" name="gader" id="" >nam</label>
+        <label><input type="radio" name="gader" id="" >nữ</label>
+    </div>
+    <div>
+        <h3>Sở thích</h3>
+        <label><input type="checkbox" name="" id="">đọc sách</label>
+        <label><input type="checkbox" name="" id="">Du lịch</label>
+        <label><input type="checkbox" name="" id="">âm nhạc</label>
+        <!-- <label><input type="checkbox" name="" id="">ẩm thực</label>
+        <label><input type="checkbox" name="" id="">khác</label> -->
+        <div > error</div>
+    </div>
+    <div>
+        <h3>quốc tich</h3>
+        <label>
+            <input list="jobs" value="" id="job" >
+            <datalist id="jobs">
+                <option value="viet nam"></option>
+                <option value="USA"></option>
+                <option value="Trung quốc"></option>
+                <option value="lao"></option>
+            </datalist>
+        </label>
+    </div>
+    <div>
+        <h3>ghi chú </h3>
+        <textarea></textarea>
+    </div>
+    <div>
+        <input type="button" value="Đắn kí" onclick="hi()">
+    </div>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
