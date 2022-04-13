@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h1>Đặt hàng</h1>
+        <div class="groupForm">
+            <p>Số lượng</p>
+            <input type="text" name="" id="">
+        </div>
+        <div class="groupForm">
+            <p>Sản Phẩm</p>
+            <input type="text" name="" id="">
+        </div>
+        <div class="groupForm">
+            <p>Loại</p>
+            <select id="list">
+                <option value="" hidden></option>
+                <option value="nokia">nokia</option>
+                <option value="iphone">iphone</option>
+                <option value="tai nghe">tai nghe</option>
+                <option value="sam sung">sam sung</option>
+                <option value="đồng hồ">đồng hồ</option>
+            </select>
+        </div>
+        <div class="groupForm">
+            <p>Đơn Giá</p>
+            <input type="text" name="" id="">
+        </div>
+        <div class="groupForm">
+            Nơi nhận hàng: 
+            <label><input type="radio" name="address" id="" value="nội thành"> nội thành</label>
+            <label><input type="radio" name="address" id="" value="ngoại thành"> ngoại thành</label>
+        </div>
+        <div class="priceDelivery">
+            <p>phi van chuyen la:</p>
+            <input type="text" name="" id="" readonly value="100000"> 
+        </div>
+        <hr>
+     
+        <button type="submit">Đặt mua</button>
+        
+    </form>
+
+    <div class="successful">
+        <p>Sản Phẩm: </p>
+        <p>Loại: </p>
+        <p>Đơn Giá: </p>
+        <p>Nơi đặt hàng: </p>
+        <p>Phí vận chuyển: </p>
+        <p>tổng tiền: </p>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

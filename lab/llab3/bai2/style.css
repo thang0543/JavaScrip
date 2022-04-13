@@ -1,0 +1,14 @@
+body{
+    
+    margin: 0px 50px;
+}
+.product{
+    width: 50%;
+    text-align: center;
+}
+h1{
+    color: aqua;
+}
+h2{
+    color: red;
+}
