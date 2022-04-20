@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bán Hàng</title>
+  </head>
+
+  <body align="center">
+    <h2>BÁN HÀNG</h2>
+    <div class="mucgia">
+      <select name="price" id="filter">
+        <option value="0">Mức giá</option>
+        <option value="1">Dưới 100</option>
+        <option value="2">Từ 100 đến 500</option>
+        <option value="3">Trên 500</option>
+      </select>
+    </div>
+    <hr />
+    <table border="1" align="center">
+      <thead>
+        <tr>
+          <td><input type="checkbox" id="checkAll" /></td>
+          <th>Hàng hóa</th>
+          <th>Đơn giá</th>
+          <th>Số lượng</th>
+          <th>Thành tiền</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox" class="check" /></td>
+          <td>Iphone</td>
+          <td>700</td>
+          <td>
+            <input type="number" value="0" min="0" step="1" disabled />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="check" /></td>
+          <td>SamSung</td>
+          <td>400</td>
+          <td>
+            <input type="number" value="0" min="0" step="1" disabled />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="check" /></td>
+          <td>Nokia</td>
+          <td>100</td>
+          <td>
+            <input type="number" value="0" min="0" step="1" disabled />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="check" /></td>
+          <td>Sony Xperia</td>
+          <td>450</td>
+          <td>
+            <input type="number" value="0" min="0" step="1" disabled />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="check" /></td>
+          <td>Motorola</td>
+          <td>180</td>
+          <td>
+            <input type="number" value="0" min="0" step="1" disabled />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="check" /></td>
+          <td>Oppo</td>
+          <td>600</td>
+          <td>
+            <input type="number" value="0" min="0" step="1" disabled />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="check" /></td>
+          <td>Bphone</td>
+          <td>90</td>
+          <td>
+            <input type="number" value="0" min="0" step="1" disabled />
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">Tổng</td>
+          <td id="tongtien"></td>
+        </tr>
+      </tfoot>
+    </table>
+    <script>
+      var $ = document.querySelector.bind(document);
+      var $$ = document.querySelectorAll.bind(document);
+      var checkAll = $("#checkAll");
+      var check = $$(".check");
+      var inputNumber = $$('input[type="number"]');
+      var filter = $("#filter");
+      var rows = $$("tbody tr");
+      var tongtien = $("#tongtien");
+
+      checkAll.onchange = function () {
+        check.forEach((checkBox) => {
+          if (checkAll.checked == true) {
+            checkBox.checked = true;
+          } else {
+            checkBox.checked = false;
+          }
+        });
+        inputNumber.forEach((input) => {
+          input.disabled = !checkAll.checked ? true : false;
+        });
+      };
+      for (var i = 0; i < check.length; i++) {
+        check[i].onchange = function () {
+          for (var i = 0; i < inputNumber.length; i++)
+            inputNumber[i].disabled = !check[i].checked ? true : false;
+        };
+      }
+      filter.onchange = function () {
+        rows.forEach((row) => {
+          var cell = row.children[2].innerHTML;
+
+          if (filter.value == 0) {
+            row.style.display = Number(cell) ? "table-row" : "none";
+          } else if (filter.value == 1) {
+            row.style.display = Number(cell) < 100 ? "table-row" : "none";
+          } else if (filter.value == 2) {
+            row.style.display =
+              Number(cell) >= 100 && Number(cell) <= 500 ? "table-row" : "none";
+          } else {
+            row.style.display = Number(cell) > 500 ? "table-row" : "none";
+          }
+        });
+      };
+
+      rows.forEach((row) => {
+          
+        var input = row.children[3];
+
+        var gia = row.children[2].innerHTML;
+        var tong1dong = row.lastElementChild;
+
+        input.onchange = function (callback) {
+            
+          var soLuong = callback.target.value;
+          tong1dong.innerHTML = gia * soLuong;
+          
+          var sum = 0;
+          for (var i = 0; i < rows.length; i++) {
+             
+            var showTotal = rows[i].lastElementChild.innerHTML;
+            sum = sum + Number(showTotal);
+            tongtien.innerHTML = sum;
+          }
+        };
+      });
+      // độ dài của mảng 
+    </script>
+  </body>
+</html>

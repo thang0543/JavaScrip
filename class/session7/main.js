@@ -33,35 +33,48 @@ console.log(phone)
 
 */
 
-var user = {
-    name: "thang",
-    email: "thangdtph27626@fpt.edu.vn",
-    signin: function () {
-        alert("sign in")
+// var user = {
+//     name: "thang",
+//     email: "thangdtph27626@fpt.edu.vn",
+//     signin: function () {
+//         alert("sign in")
+//     },
+//     signout: function () {
+//         alert("sign out")
+//     }
+
+// }
+
+var users =[
+    {
+        name: "thang",
+        email: "thangdtph27626@fpt.edu.vn",
     },
-    signout: function () {
-        alert("sign out")
+    {
+        name: "thanh",
+        email: "thanhdtph87626@fpt.edu.vn",
     }
-
-}
-
+]
 // console.log(user.name + ", " + user.email)
 
-// var user_info = document.querySelector(".user-info")
-// user_info.innerHTML = `
-//     <h2>${user.name}</h2>
-//     <p>${user.email}</p>
-// `
-
 var userName = document.querySelector("#userName")
+var email = document.querySelector("#email")
 var btn = document.querySelector("button")
+var user_info = document.querySelector(".user-info")
 
 
-btn.addEventListener("click",function(event){
-    event.preventDefault();
-    if(user.name == userName.value ){
-       alert("dang nhap thanh cong")
-    }else{
-        alert("dang nhap that bai")
+btn.addEventListener("click",function(even){
+    even.preventDefault()
+    for(var user of users){
+        if(user.name == userName.value && email.value == user.email){
+            user_info.innerHTML = `
+            <p>dang nhap thanh cong</p>
+     `
+        break;
+         }else{
+             user_info.innerHTML = `
+             <p>dang nhap that bai</p>
+      `
+         }
     }
 })

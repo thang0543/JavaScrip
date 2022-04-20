@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th,td{
+            border: 1px solid #ccc;
+        }
+        .addNewUser{
+            display: none;
+            margin: 10px;
+        }
+        .updateNewUser{
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th> 
+            <th>hiển thị</th>
+            <th>xóa</th>
+            <th>cập nhật</th>
+        </thead>
+        <tbody>
+          
+        </tbody>
+    </table>
+    <div class="info" >
+        
+    </div>
+    <button class="add" onclick="showAddUser()">thêm mới </button>
+    <div class="addNewUser">
+        <label>nhập tên: <input type="text" id="nameUser"></label>
+        <label>nhập email: <input type="text" id="emailUser"></label>
+        <label>nhập Password: <input type="text" id="PasswordUser"></label>
+        <button  onclick="AddUser()">add</button>
+    </div>
+    <div class="updateNewUser">
+        <label>nhập tên: <input type="text" id="nameUser1"></label>
+        <label>nhập email: <input type="text" id="emailUser1"></label>
+        <label>nhập Password: <input type="text" id="PasswordUser1"></label>
+        
+    </div>
+   <div class="erro">
+
+   </div>
+    <script src="user.js"></script>
+</body>
+</html>
