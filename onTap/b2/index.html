@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        width: 20%;
+        display: grid;
+    }
+    input,select{
+        margin: 5px 0 ;
+    }
+    table{
+        border: 1px solid #ccc;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th,td{
+        border: 1px solid #ccc;
+    }
+</style>
+<body>
+    <form action="">
+        <input type="text" name="" id="userName" placeholder="userName">
+        <div class="erro"></div>
+        <input type="password" name="" id="password" placeholder="password">
+        <div class="erro"></div>
+        <input type="password" name="" id="re_password" placeholder="Re-password">
+        <div class="erro"></div>
+        <input type="text" name="" id="email" placeholder="email">
+        <div class="erro"></div>
+        <select name="" id="status">
+            <option value="" aria-placeholder="tinh trang" hidden></option>
+            <option value="0"> co</option>
+            <option value="1"> khong</option>
+        </select>
+        <div class="erro"></div>
+        <button id="btn">thêm mới</button>
+
+        <table>
+            <thead><tr>
+                <th>user name</th>
+                <th>password</th>
+                <th>re password</th>
+                <th>email</th>
+                <th>status</th>
+                <th>xóa</th>
+            </tr></thead>
+            <tbody>
+              
+            </tbody>        </table>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>

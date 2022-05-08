@@ -21,7 +21,12 @@
         .updateNewUser{
             display: none;
         }
-        
+        #idUser{
+            display: none;
+        }
+        .btnSave{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -43,17 +48,14 @@
     </div>
     <button class="add" onclick="showAddUser()">thêm mới </button>
     <div class="addNewUser">
+        <label for=""><input type="text" name="" id="idUser"></label>
         <label>nhập tên: <input type="text" id="nameUser"></label>
         <label>nhập email: <input type="text" id="emailUser"></label>
         <label>nhập Password: <input type="text" id="PasswordUser"></label>
-        <button  onclick="AddUser()">add</button>
+        <button  onclick="AddUser()" class="btnAdd">add</button>
+        <button onclick="updateUser()" class="btnSave">save</button>
     </div>
-    <div class="updateNewUser">
-        <label>nhập tên: <input type="text" id="nameUser1"></label>
-        <label>nhập email: <input type="text" id="emailUser1"></label>
-        <label>nhập Password: <input type="text" id="PasswordUser1"></label>
-        
-    </div>
+   
    <div class="erro">
 
    </div>

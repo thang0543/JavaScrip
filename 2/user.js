@@ -23,12 +23,15 @@ var tbody = document.querySelector("tbody")
 var infoUser = document.querySelector(".info")
 var addNewUser = document.querySelector(".addNewUser")
 var update = document.querySelector(".updateNewUser")
+var idUser = document.querySelector("#idUser")
 var nameUser = document.querySelector("#nameUser")
 var emailUser = document.querySelector("#emailUser")
 var PasswordUser = document.querySelector("#PasswordUser")
-var nameUser1 = document.querySelector("#nameUser1")
-var emailUser1 = document.querySelector("#emailUser1")
-var PasswordUser1 = document.querySelector("#PasswordUser1")
+var btnAdd = document.querySelector(".btnAdd")
+var btnSave = document.querySelector(".btnSave")
+var btnAdd = document.querySelector(".btnAdd")
+
+
 var erro = document.querySelector(".erro")
 
 console.log(erro)
@@ -44,7 +47,7 @@ function showUser() {
              <td>${item.password}</td>
              <td><button onclick="info(${item.id})">chi tiết</button></td>
              <td><button onclick="deleteUser(${item.id})">delete</button></td>
-             <td><button onclick="updateUser(${item.id})"> cập nhật</button></td>
+             <td><button onclick="showInfoUser(${item.id})"> cập nhật</button></td>
          </tr>
         `
     }).join("")
@@ -72,7 +75,8 @@ function deleteUser(id) {
     for (var index of users) {
 
         if (index.id == id) {
-            users.splice(id, 1);
+            var itemIndex = users.indexOf(index);
+            users.splice(itemIndex, 1);
             showUser();
         }
     }
@@ -84,38 +88,65 @@ function showAddUser() {
 
 }
 function AddUser() {
+
     var flag = true;
-    var count = 0;
     
     for (var index of users) {
         if (index.email == emailUser.value) {
             flag = false;
            
         }
-        count++;
+      
     }
 
-    var user = {id: count + 1, name: nameUser.value, email: emailUser.value, password: PasswordUser.value}
-    if (flag == false) {
+    var user = {id: users.length+1, name: nameUser.value, email: emailUser.value, password: PasswordUser.value}
+    if (flag == false ) {
         erro.innerHTML += "email đã tồn tai"
-    } else {
+    } else if(flag == true ){
         users.push(user);
     }
     showUser();
+    setForm()
 }
 
-function updateUser(id){
-    update.style.display ="block"
+function showInfoUser(id){
+    btnSave.style.display = "block"
+    btnAdd.style.display = "none"
+    addNewUser.style.display = "block"
     for(var index of users){
         if(index.id == id){
-         index.name = nameUser1.value
-         index.password = PasswordUser1.value
-         index.email = emailUser1.value
+         idUser.value = index.id
+         nameUser.value = index.name
+         PasswordUser.value = index.password
+         emailUser.value = index.email
          break;
         }
         
     }
-    showUser()
+    
    
 }
 
+function updateUser(){
+        for(var index of users){
+            if(index.id == idUser.value){
+             index.name = nameUser.value
+             index.password = PasswordUser.value
+             index.email = emailUser.value
+             break;
+            }
+            
+        }
+    
+    showUser()
+    setForm()
+}
+
+function setForm(){
+    btnSave.style.display = "none"
+    btnAdd.style.display = "block"
+    addNewUser.style.display = "none"
+    nameUser.value = ""
+    PasswordUser.value = ""
+    emailUser.value = ""
+}

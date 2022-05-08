@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: inline-grid;
+        }
+
+       input,select{
+           margin: 10px ;
+       }
+       table{
+           border: 1px solid #ccc;
+           border-collapse:collapse ;
+           
+       }
+       th,td{
+        border: 1px solid #ccc;
+       }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" name="" id="nameTor" placeholder="tên tor">
+        <div class="erro"></div>
+        <input type="text" name="" id="idTor" placeholder="mã tor">
+        <div class="erro"></div>
+        <select name="" id="donVi">
+            <option value="" hidden disabled selected> Đơn Vị tổ chức</option>
+            <option value="Viet Nam">Viet Nam</option>
+            <option value="Nuoc ngoai">nuoc ngoai</option>
+        </select>
+        <div class="erro"></div>
+        <div class="radioGroup">
+            <label for=""><input type="radio" name="Gender" id="male"> nam</label>
+            <label for=""><input type="radio" name="Gender" id="female"> nữ</label>
+        </div>
+        <div class="erro"></div>
+        <input type="text" name="" id="quantity" placeholder="số người đi cùng">
+        <div class="erro"></div>
+        <button id="SingUp">đăng kí</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>tên</th>
+                <th>mã</th>
+                <th>nhà cung cấp</th>
+                <th>giới tính</th>
+                <th>số lượng</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <script src="main.js"></script>
+</body>
+
+</html>

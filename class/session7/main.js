@@ -78,3 +78,7 @@ btn.addEventListener("click",function(even){
          }
     }
 })
+
+var st = "Shakespeare written \"To be or not to be \" ";
+
+document.write(!isNaN(st));
